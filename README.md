@@ -1,1 +1,1 @@
-A simple command-line application.
+Playboard helper for both frontend and backend.
