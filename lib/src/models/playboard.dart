@@ -1,7 +1,6 @@
 import 'dart:math';
 
 import 'package:collection/collection.dart';
-import 'package:flutter/foundation.dart';
 import 'package:slideparty_playboard_utils/src/helper.dart';
 
 import 'loc.dart';
@@ -35,7 +34,6 @@ class Playboard {
     return Playboard(size: size, currentBoard: currentBoard);
   }
 
-  @visibleForTesting
   factory Playboard.fromMatrix(List<List<int>> matrix) {
     return Playboard(
       size: matrix.length,
@@ -162,9 +160,7 @@ class Playboard {
   }
 }
 
-@visibleForTesting
 class SolvingMachine {
-  @visibleForTesting
   static _PlayboardNode? bestStepSolution(List<int> currentBoard) {
     PriorityQueue<_PlayboardNode> queue = PriorityQueue<_PlayboardNode>();
     _PlayboardNode root = _PlayboardNode(
@@ -949,7 +945,6 @@ class SolvingMachine {
   /// - Push all left number to right
   /// - Push all bottom number to up
   /// - Move `boardSize * (boardSize - 1)` number to Loc(boardSize - 1, 0)
-  @visibleForTesting
   static List<PlayboardDirection> quickSolveSolution(List<int> board) {
     var currentBoard = [...board];
     var directions = <PlayboardDirection>[];

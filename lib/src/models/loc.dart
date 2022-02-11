@@ -1,5 +1,4 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter/material.dart';
 import 'package:slideparty_playboard_utils/src/models/playboard.dart';
 
 /// [Loc] represents a coordinate in the puzzle map.
@@ -14,7 +13,6 @@ class Loc extends Equatable {
   factory Loc.fromIndex(int size, int index) =>
       Loc(index % size, index ~/ size);
 
-  Size get toSize => Size(dx.toDouble(), dy.toDouble());
 
   bool isInEvenRow(int size) => (size - dy).isEven;
 
